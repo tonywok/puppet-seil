@@ -15,7 +15,7 @@ describe 'seil::bind' do
   end
 
   it do
-    should include_class('seil::config')
+    should contain_class('seil::config')
 
     should contain_property_list_key('seil::bind').with({
       :ensure      => 'present',

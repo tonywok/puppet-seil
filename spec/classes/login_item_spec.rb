@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'seil::login_item' do
   it do
-    should include_class('seil::config')
+    should contain_class('seil::config')
 
     should contain_exec('launch seil').with({
       :command     => '/usr/bin/open /Applications/Seil.app',
