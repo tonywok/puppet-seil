@@ -1,19 +1,19 @@
-# PCKeyboardHack Puppet Module for Boxen
+# Seil Puppet Module for Boxen
 
-[![Build Status](https://travis-ci.org/smh/puppet-pckeyboardhack.png?branch=master)](https://travis-ci.org/smh/puppet-pckeyboardhack)
+[![Build Status](https://travis-ci.org/smh/puppet-seil.png?branch=master)](https://travis-ci.org/smh/puppet-seil)
 
-Installs [PCKeyboardHack](http://pqrs.org/macosx/pckeyboardhack/pckeyboardhack.html.en) on your Mac.
+Installs [Seil](https://pqrs.org/macosx/keyremap4macbook/seil.html.en) on your Mac.
 
 ## Usage
 
 ```puppet
-include pckeyboardhack
+include seil
 
-# add pckeyboardhack to login items:
-include pckeyboardhack::login_item
+# add seil to login items:
+include seil::login_item
 
 # change the left control to F19:
-pckeyboardhack::bind { 'keyboard bindings':
+seil::bind { 'keyboard bindings':
   mappings => { 'control_l' => 80 }
 }
 ```
@@ -22,7 +22,7 @@ pckeyboardhack::bind { 'keyboard bindings':
 
 The codes for the keys that can be used in the mappings are listed below.
 
-To identify keys not listed below, run `defaults read org.pqrs.PCKeyboardHack.plist` and look for the corresponding key, ie. `enable_control_l` or `enable_capslock`. Note that the code you need excludes the `enable_` or `keycode_` portion, ie. just `control_l` or `capslock`.
+To identify keys not listed below, run `defaults read org.pqrs.Seil.plist` and look for the corresponding key, ie. `enable_control_l` or `enable_capslock`. Note that the code you need excludes the `enable_` or `keycode_` portion, ie. just `control_l` or `capslock`.
 
 ### Caps Lock
 

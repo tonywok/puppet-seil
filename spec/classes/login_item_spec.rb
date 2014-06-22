@@ -1,23 +1,23 @@
 require 'spec_helper'
 
-describe 'pckeyboardhack::login_item' do
+describe 'seil::login_item' do
   it do
-    should include_class('pckeyboardhack::config')
+    should include_class('seil::config')
 
-    should contain_exec('launch pckeyboardhack').with({
-      :command     => '/usr/bin/open /Applications/PCKeyboardHack.app',
+    should contain_exec('launch seil').with({
+      :command     => '/usr/bin/open /Applications/Seil.app',
       :refreshonly => true,
-      :subscribe   => 'Package[PCKeyboardHack_10.5.0]',
-      :require     => 'Osx_login_item[PCKeyboardHack]'
+      :subscribe   => 'Package[Seil_10.8.0]',
+      :require     => 'Osx_login_item[Seil]'
     })
   end
 
   context 'with ensure defaulted' do
     it do
-      should contain_osx_login_item('PCKeyboardHack').with({
+      should contain_osx_login_item('Seil').with({
         :ensure  => 'present',
-        :path    => '/Applications/PCKeyboardHack.app',
-        :require => 'Package[PCKeyboardHack_10.5.0]'
+        :path    => '/Applications/Seil.app',
+        :require => 'Package[Seil_10.8.0]'
       })
     end
   end
@@ -30,10 +30,10 @@ describe 'pckeyboardhack::login_item' do
     end
 
     it do
-      should contain_osx_login_item('PCKeyboardHack').with({
+      should contain_osx_login_item('Seil').with({
         :ensure  => 'present',
-        :path    => '/Applications/PCKeyboardHack.app',
-        :require => 'Package[PCKeyboardHack_10.5.0]'
+        :path    => '/Applications/Seil.app',
+        :require => 'Package[Seil_10.8.0]'
       })
     end
   end
@@ -46,10 +46,10 @@ describe 'pckeyboardhack::login_item' do
     end
 
     it do
-      should contain_osx_login_item('PCKeyboardHack').with({
+      should contain_osx_login_item('Seil').with({
         :ensure  => 'absent',
-        :path    => '/Applications/PCKeyboardHack.app',
-        :require => 'Package[PCKeyboardHack_10.5.0]'
+        :path    => '/Applications/Seil.app',
+        :require => 'Package[Seil_10.8.0]'
       })
     end
   end

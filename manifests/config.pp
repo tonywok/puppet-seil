@@ -1,12 +1,12 @@
-# configuration for pckeyboardhack
+# configuration for seil
 #
 # $dmg_url - where to download the dmg
 # $app - location of installed application
 # $plist_path - location of plist
-class pckeyboardhack::config {
-  $version = '10.5.0'
+class seil::config {
+  $version = '10.8.0'
   $base_url = 'https://pqrs.org/macosx/keyremap4macbook/files'
-  $dmg_url = "${base_url}/PCKeyboardHack-${version}.dmg"
-  $app = '/Applications/PCKeyboardHack.app'
-  $plist_path = "/Users/${::boxen_user}/Library/Preferences/org.pqrs.PCKeyboardHack.plist"
+  $dmg_url = "${base_url}/Seil-${version}.dmg"
+  $app = '/Applications/Seil.app'
+  $plist_path = "/Users/${::boxen_user}/Library/Preferences/org.pqrs.Seil.plist"
 }

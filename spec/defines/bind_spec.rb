@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'pckeyboardhack::bind' do
+describe 'seil::bind' do
   let(:facts) do
     { :boxen_user => 'smh' }
   end
@@ -15,11 +15,11 @@ describe 'pckeyboardhack::bind' do
   end
 
   it do
-    should include_class('pckeyboardhack::config')
+    should include_class('seil::config')
 
-    should contain_property_list_key('pckeyboardhack::bind').with({
+    should contain_property_list_key('seil::bind').with({
       :ensure      => 'present',
-      :path        => '/Users/smh/Library/Preferences/org.pqrs.PCKeyboardHack.plist',
+      :path        => '/Users/smh/Library/Preferences/org.pqrs.Seil.plist',
       :key         => 'sysctl',
       :value       => {
         'enable_control_l'  => 1,
@@ -30,9 +30,9 @@ describe 'pckeyboardhack::bind' do
       :value_type  => 'hash'
     })
 
-    should contain_file('/Users/smh/Library/Preferences/org.pqrs.PCKeyboardHack.plist').with({
+    should contain_file('/Users/smh/Library/Preferences/org.pqrs.Seil.plist').with({
       :owner => 'smh',
-      :require => 'Property_list_key[pckeyboardhack::bind]'
+      :require => 'Property_list_key[seil::bind]'
     })
   end
 end

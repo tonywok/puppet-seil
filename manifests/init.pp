@@ -1,14 +1,14 @@
-# Public: Installs PCKeyboardHack 9.0.0
+# Public: Installs Seil 10.8.0
 #
 # Usage:
 #
-#   include pckeyboardhack
-class pckeyboardhack {
-  include pckeyboardhack::config
+#   include seil
+class seil {
+  include seil::config
 
-  package { "PCKeyboardHack_${pckeyboardhack::config::version}":
+  package { "Seil_${seil::config::version}":
     ensure   => installed,
-    source   => $pckeyboardhack::config::dmg_url,
+    source   => $seil::config::dmg_url,
     provider => 'pkgdmg'
   }
 }

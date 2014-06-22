@@ -1,21 +1,21 @@
-# Public: Configures bindings for PCKeyboardHack
+# Public: Configures bindings for Seil
 #
 # Parameters:
 #
 #  mappings - a hash of mappings to set up. For instance: { 'control_l' => 80 }
-define pckeyboardhack::bind($mappings) {
-  include pckeyboardhack::config
+define seil::bind($mappings) {
+  include seil::config
 
-  property_list_key { 'pckeyboardhack::bind':
+  property_list_key { 'seil::bind':
     ensure     => 'present',
-    path       => $pckeyboardhack::config::plist_path,
+    path       => $seil::config::plist_path,
     key        => 'sysctl',
     value      => expand_binding($mappings),
     value_type => 'hash'
   }
 
-  file { $pckeyboardhack::config::plist_path:
+  file { $seil::config::plist_path:
     owner   => $::boxen_user,
-    require => Property_list_key['pckeyboardhack::bind']
+    require => Property_list_key['seil::bind']
   }
 }
