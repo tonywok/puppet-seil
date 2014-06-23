@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'seil' do
   it do
-    should include_class('seil::config')
+    should contain_class('seil::config')
 
     should contain_package('Seil_10.8.0').with({
       :ensure   => 'installed',
